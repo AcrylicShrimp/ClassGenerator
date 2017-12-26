@@ -109,5 +109,10 @@ namespace ClassGenerator
 			sClassHeaderBuilder.Append(sIndent).AppendLine(sIndent);
 			sClassHeaderBuilder.Append(sIndent).Append("};");
 		}
+
+		private void generateClassBody(StringBuilder sClassHeaderBuilder, string sIndent, string sTargetName)
+		{
+
+		}
 	}
 }
