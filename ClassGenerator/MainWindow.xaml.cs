@@ -233,6 +233,7 @@ namespace ClassGenerator
 
 			sIncludeGuardBuilder.Append('_');
 			sIncludeGuardBuilder.Append(sTargetName.ToUpper());
+			sIncludeGuardBuilder.Append("_H");
 
 			return sIncludeGuardBuilder.ToString();
 		}
