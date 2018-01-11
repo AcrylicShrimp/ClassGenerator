@@ -52,6 +52,7 @@ namespace ClassGenerator
 			sHeaderFileBuilder.Append(sIndent).AppendLine("TODO : Place the include directives here.");
 			sHeaderFileBuilder.AppendLine("*/");
 			sHeaderFileBuilder.AppendLine();
+			sHeaderFileBuilder.AppendLine();
 			sHeaderFileBuilder.AppendLine("#include <utility>");
 			sHeaderFileBuilder.AppendLine();
 
@@ -60,13 +61,13 @@ namespace ClassGenerator
 				sHeaderFileBuilder.Append("namespace ").AppendLine(sNamespaceDeclaration);
 				sHeaderFileBuilder.AppendLine("{");
 
-				this.generateClassHeader(sHeaderFileBuilder, sIndent, sTargetName);
+				this.generateClassHeader(sHeaderFileBuilder, sIndent, sIndent, sTargetName);
 
 				sHeaderFileBuilder.AppendLine();
 				sHeaderFileBuilder.Append("}");
 			}
 			else
-				this.generateClassHeader(sHeaderFileBuilder, string.Empty, sTargetName);
+				this.generateClassHeader(sHeaderFileBuilder, string.Empty, sIndent, sTargetName);
 
 			if (sIncludeGuardDefinition != null)
 			{
@@ -78,40 +79,40 @@ namespace ClassGenerator
 			return sHeaderFileBuilder;
 		}
 
-		private void generateClassHeader(StringBuilder sClassHeaderBuilder, string sIndent, string sTargetName)
+		private void generateClassHeader(StringBuilder sClassHeaderBuilder, string sIndentFirst, string sIndentSecond, string sTargetName)
 		{
-			sClassHeaderBuilder.Append(sIndent).Append("class ").AppendLine(sTargetName);
-			sClassHeaderBuilder.Append(sIndent).AppendLine("{");
-			sClassHeaderBuilder.Append(sIndent).AppendLine("private:");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).AppendLine("/*");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).Append(sIndent).AppendLine("TODO : Place the class member variable declarations here.");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).AppendLine("*/");
-			sClassHeaderBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassHeaderBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassHeaderBuilder.Append(sIndent).AppendLine("public:");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).Append(sTargetName).AppendLine("();");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).Append(sTargetName).Append("(const ").Append(sTargetName).AppendLine(" &sSrc);");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).Append(sTargetName).Append("(").Append(sTargetName).AppendLine(" &&sSrc);");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).Append('~').Append(sTargetName).AppendLine("();");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).AppendLine("/*");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).Append(sIndent).AppendLine("TODO : Place the declarations of other constructors here.");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).AppendLine("*/");
-			sClassHeaderBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassHeaderBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassHeaderBuilder.Append(sIndent).AppendLine("public:");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).Append(sTargetName).Append(" &operator=(const ").Append(sTargetName).AppendLine(" &sSrc);");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).Append(sTargetName).Append(" &operator=(").Append(sTargetName).AppendLine(" &&sSrc);");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).AppendLine("/*");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).Append(sIndent).AppendLine("TODO : Place other operator overloadings here.");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).AppendLine("*/");
-			sClassHeaderBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassHeaderBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassHeaderBuilder.Append(sIndent).AppendLine("public:");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).AppendLine("/*");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).Append(sIndent).AppendLine("TODO : Place the member function declarations here.");
-			sClassHeaderBuilder.Append(sIndent).Append(sIndent).AppendLine("*/");
-			sClassHeaderBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassHeaderBuilder.Append(sIndent).Append("};");
+			sClassHeaderBuilder.Append(sIndentFirst).Append("class ").AppendLine(sTargetName);
+			sClassHeaderBuilder.Append(sIndentFirst).AppendLine("{");
+			sClassHeaderBuilder.Append(sIndentFirst).AppendLine("private:");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("/*");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sIndentSecond).AppendLine("TODO : Place the class member variable declarations here.");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("*/");
+			sClassHeaderBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassHeaderBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassHeaderBuilder.Append(sIndentFirst).AppendLine("public:");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sTargetName).AppendLine("();");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sTargetName).Append("(const ").Append(sTargetName).AppendLine(" &sSrc);");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sTargetName).Append("(").Append(sTargetName).AppendLine(" &&sSrc);");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).Append('~').Append(sTargetName).AppendLine("();");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("/*");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sIndentSecond).AppendLine("TODO : Place the declarations of other constructors here.");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("*/");
+			sClassHeaderBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassHeaderBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassHeaderBuilder.Append(sIndentFirst).AppendLine("public:");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sTargetName).Append(" &operator=(const ").Append(sTargetName).AppendLine(" &sSrc);");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sTargetName).Append(" &operator=(").Append(sTargetName).AppendLine(" &&sSrc);");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("/*");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sIndentSecond).AppendLine("TODO : Place other operator overloadings here.");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("*/");
+			sClassHeaderBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassHeaderBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassHeaderBuilder.Append(sIndentFirst).AppendLine("public:");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("/*");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sIndentSecond).AppendLine("TODO : Place the member function declarations here.");
+			sClassHeaderBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("*/");
+			sClassHeaderBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassHeaderBuilder.Append(sIndentFirst).Append("};");
 		}
 
 		private StringBuilder generateClassBody(DateTime sNow, string sAuthorName, string sIncludeGuardDefinition, string sNamespaceDeclaration, string sTargetName, string sIndent)
@@ -136,89 +137,88 @@ namespace ClassGenerator
 				sSourceFileBuilder.Append("namespace ").AppendLine(sNamespaceDeclaration);
 				sSourceFileBuilder.AppendLine("{");
 
-				this.generateClassBody(sSourceFileBuilder, sIndent, sTargetName);
+				this.generateClassBody(sSourceFileBuilder, sIndent, sIndent, sTargetName);
 
 				sSourceFileBuilder.AppendLine();
 				sSourceFileBuilder.Append("}");
 			}
 			else
-				this.generateClassBody(sSourceFileBuilder, string.Empty, sTargetName);
+				this.generateClassBody(sSourceFileBuilder, string.Empty, sIndent, sTargetName);
 
 			return sSourceFileBuilder;
 		}
 
-		private void generateClassBody(StringBuilder sClassBodyBuilder, string sIndent, string sTargetName)
+		private void generateClassBody(StringBuilder sClassBodyBuilder, string sIndentFirst, string sIndentSecond, string sTargetName)
 		{
-			sClassBodyBuilder.Append(sIndent).AppendLine("/*");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("TODO : Place the static class member variable definitions here.");
-			sClassBodyBuilder.Append(sIndent).AppendLine("*/");
-			sClassBodyBuilder.AppendLine(sIndent);
-			sClassBodyBuilder.AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).Append(sTargetName).Append("::").Append(sTargetName).AppendLine("()");
-			sClassBodyBuilder.Append(sIndent).AppendLine("{");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("/*");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).Append(sIndent).AppendLine("TODO : Place the default constructor here.");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("*/");
-			sClassBodyBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).AppendLine("}");
-			sClassBodyBuilder.AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).Append(sTargetName).Append("::").Append(sTargetName).Append("(const ").Append(sTargetName).AppendLine(" &sSrc)");
-			sClassBodyBuilder.Append(sIndent).AppendLine("{");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("/*");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).Append(sIndent).AppendLine("TODO : Place the implementation of the copy constructor here.");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("*/");
-			sClassBodyBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).AppendLine("}");
-			sClassBodyBuilder.AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).Append(sTargetName).Append("::").Append(sTargetName).Append("(").Append(sTargetName).AppendLine(" &&sSrc)");
-			sClassBodyBuilder.Append(sIndent).AppendLine("{");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("/*");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).Append(sIndent).AppendLine("TODO : Place the implementation of the move constructor here.");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("*/");
-			sClassBodyBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).AppendLine("}");
-			sClassBodyBuilder.AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).AppendLine("/*");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("TODO : Place the implementations of other constructors here.");
-			sClassBodyBuilder.Append(sIndent).AppendLine("*/");
-			sClassBodyBuilder.AppendLine(sIndent);
-			sClassBodyBuilder.AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).Append(sTargetName).Append(" &").Append(sTargetName).Append("::operator=(const ").Append(sTargetName).AppendLine(" &sSrc)");
-			sClassBodyBuilder.Append(sIndent).AppendLine("{");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("if (&sSrc == this)");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).Append(sIndent).AppendLine("return *this;");
-			sClassBodyBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("/*");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).Append(sIndent).AppendLine("TODO : Place the implementation of the copy assignment operator here.");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("*/");
-			sClassBodyBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("return *this;");
-			sClassBodyBuilder.Append(sIndent).AppendLine("}");
-			sClassBodyBuilder.AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).Append(sTargetName).Append(" &").Append(sTargetName).Append("::operator=(").Append(sTargetName).AppendLine(" &&sSrc)");
-			sClassBodyBuilder.Append(sIndent).AppendLine("{");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("if (&sSrc == this)");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).Append(sIndent).AppendLine("return *this;");
-			sClassBodyBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("/*");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).Append(sIndent).AppendLine("TODO : Place the implementation of the move assignment operator here.");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("*/");
-			sClassBodyBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("return *this;");
-			sClassBodyBuilder.Append(sIndent).AppendLine("}");
-			sClassBodyBuilder.AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).AppendLine("/*");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("TODO : Implement other operator overloadings here.");
-			sClassBodyBuilder.Append(sIndent).AppendLine("*/");
-			sClassBodyBuilder.AppendLine(sIndent);
-			sClassBodyBuilder.AppendLine(sIndent);
-			sClassBodyBuilder.Append(sIndent).AppendLine("/*");
-			sClassBodyBuilder.Append(sIndent).Append(sIndent).AppendLine("TODO : Place the member function implementations here.");
-			sClassBodyBuilder.Append(sIndent).AppendLine("*/");
-			sClassBodyBuilder.AppendLine(sIndent);
-			sClassBodyBuilder.Append("}");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("/*");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("TODO : Place the static class member variable definitions here.");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("*/");
+			sClassBodyBuilder.AppendLine(sIndentFirst);
+			sClassBodyBuilder.AppendLine(sIndentFirst);
+			sClassBodyBuilder.Append(sIndentFirst).Append(sTargetName).Append("::").Append(sTargetName).AppendLine("()");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("{");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("/*");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sIndentSecond).AppendLine("TODO : Place the default constructor here.");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("*/");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("}");
+			sClassBodyBuilder.AppendLine(sIndentFirst);
+			sClassBodyBuilder.Append(sIndentFirst).Append(sTargetName).Append("::").Append(sTargetName).Append("(const ").Append(sTargetName).AppendLine(" &sSrc)");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("{");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("/*");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sIndentSecond).AppendLine("TODO : Place the implementation of the copy constructor here.");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("*/");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("}");
+			sClassBodyBuilder.AppendLine(sIndentFirst);
+			sClassBodyBuilder.Append(sIndentFirst).Append(sTargetName).Append("::").Append(sTargetName).Append("(").Append(sTargetName).AppendLine(" &&sSrc)");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("{");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("/*");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sIndentSecond).AppendLine("TODO : Place the implementation of the move constructor here.");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("*/");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("}");
+			sClassBodyBuilder.AppendLine(sIndentFirst);
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("/*");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("TODO : Place the implementations of other constructors here.");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("*/");
+			sClassBodyBuilder.AppendLine(sIndentFirst);
+			sClassBodyBuilder.AppendLine(sIndentFirst);
+			sClassBodyBuilder.Append(sIndentFirst).Append(sTargetName).Append(" &").Append(sTargetName).Append("::operator=(const ").Append(sTargetName).AppendLine(" &sSrc)");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("{");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("if (&sSrc == this)");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sIndentSecond).AppendLine("return *this;");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("/*");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sIndentSecond).AppendLine("TODO : Place the implementation of the copy assignment operator here.");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("*/");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("return *this;");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("}");
+			sClassBodyBuilder.AppendLine(sIndentFirst);
+			sClassBodyBuilder.Append(sIndentFirst).Append(sTargetName).Append(" &").Append(sTargetName).Append("::operator=(").Append(sTargetName).AppendLine(" &&sSrc)");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("{");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("if (&sSrc == this)");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sIndentSecond).AppendLine("return *this;");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("/*");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sIndentSecond).AppendLine("TODO : Place the implementation of the move assignment operator here.");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("*/");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("return *this;");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("}");
+			sClassBodyBuilder.AppendLine(sIndentFirst);
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("/*");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("TODO : Implement other operator overloadings here.");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("*/");
+			sClassBodyBuilder.AppendLine(sIndentFirst);
+			sClassBodyBuilder.AppendLine(sIndentFirst);
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("/*");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("TODO : Place the member function implementations here.");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("*/");
+			sClassBodyBuilder.Append(sIndentFirst);
 		}
 	}
 }

@@ -38,5 +38,15 @@ namespace ClassGenerator
 		{
 			return this.sGeneratorDict.ToList();
 		}
+
+		public Generator getGenerator(string sGeneratorName)
+		{
+			Generator sGenerator;
+
+			if (this.sGeneratorDict.TryGetValue(sGeneratorName, out sGenerator))
+				return sGenerator;
+
+			return null;
+		}
 	}
 }
