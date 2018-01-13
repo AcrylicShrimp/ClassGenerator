@@ -179,6 +179,14 @@ namespace ClassGenerator
 			sClassBodyBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
 			sClassBodyBuilder.Append(sIndentFirst).AppendLine("}");
 			sClassBodyBuilder.AppendLine(sIndentFirst);
+			sClassBodyBuilder.Append(sIndentFirst).Append(sTargetName).Append("::~").Append(sTargetName).AppendLine("()");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("{");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("/*");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).Append(sIndentSecond).AppendLine("TODO : Place the implementation of the destructor here.");
+			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("*/");
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine(sIndentSecond);
+			sClassBodyBuilder.Append(sIndentFirst).AppendLine("}");
+			sClassBodyBuilder.AppendLine(sIndentFirst);
 			sClassBodyBuilder.Append(sIndentFirst).AppendLine("/*");
 			sClassBodyBuilder.Append(sIndentFirst).Append(sIndentSecond).AppendLine("TODO : Place the implementations of other constructors here.");
 			sClassBodyBuilder.Append(sIndentFirst).AppendLine("*/");

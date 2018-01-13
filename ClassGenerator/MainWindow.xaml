@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassGenerator"
         mc:Ignorable="d"
-        Title="Class Generator" Height="515" Width="525" Closing="onClosing" Loaded="onLoaded" MinHeight="515" MaxHeight="515" MinWidth="300">
+        Title="Class Generator" Height="515" Width="525" Closing="onClosing" Loaded="onLoaded" MinHeight="515" MinWidth="300">
 	<Grid>
 		<GroupBox Header="Project Path" Height="194" Margin="10,10,10,0" VerticalAlignment="Top" FontFamily="Consolas">
 			<Grid Margin="0">
