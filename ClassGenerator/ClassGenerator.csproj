@@ -112,9 +112,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ClassEdit.xaml.cs">
+      <DependentUpon>ClassEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ClassGenerator\CPPClassGenerator.cs" />
     <Compile Include="ClassGenerator\GenerateManager.cs" />
     <Compile Include="ClassGenerator\Generator.cs" />
+    <Compile Include="FieldEdit.xaml.cs">
+      <DependentUpon>FieldEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MethodEdit.xaml.cs">
+      <DependentUpon>MethodEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +149,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="ClassGenerator_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
@@ -152,9 +160,21 @@
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </ApplicationDefinition>
+    <Page Include="ClassEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FieldEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="MethodEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
