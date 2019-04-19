@@ -5,46 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassGenerator"
         mc:Ignorable="d"
-        Title="Edit class" Width="450" Height="405" MinWidth="400" MinHeight="405">
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="170"/>
-			<ColumnDefinition Width="2*"/>
-			<ColumnDefinition Width="1*"/>
-		</Grid.ColumnDefinitions>
-		<Label Content="Class name" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="26" Width="72"/>
-		<Label Content=":" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
-		<TextBox Grid.Column="1" Height="23" Margin="10,11,10,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
-		<Label Content="Header file" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="26" Width="70"/>
-		<Label Content=":" Margin="0,41,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
-		<TextBox Grid.Column="1" Height="23" Margin="10,42,10,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
-		<Label Content="Source file" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Height="26" Width="67"/>
-		<Label Content=":" Margin="0,72,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
-		<TextBox Grid.Column="1" Height="23" Margin="10,73,10,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
-		<Label Content="Template source file" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Height="26" Width="121"/>
-		<Label Content=":" Margin="0,103,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
-		<TextBox Grid.Column="1" Height="23" Margin="10,104,10,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
-		<Rectangle HorizontalAlignment="Stretch" Fill="#FFABADB3" Height="1" Grid.ColumnSpan="3" Margin="10,134,10,0" VerticalAlignment="Top"/>
-		<CheckBox Content="With include guard" Grid.Column="1" Margin="0,140,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2"/>
-		<Label Content="Include guard" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Height="26" Width="85"/>
-		<Label Content=":" Margin="0,160,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
-		<TextBox Grid.Column="1" Height="23" Margin="10,161,10,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
-		<Rectangle HorizontalAlignment="Stretch" Fill="#FFABADB3" Height="1" Grid.ColumnSpan="3" Margin="10,191,10,0" VerticalAlignment="Top"/>
-		<CheckBox Content="With namespace" Grid.Column="1" Margin="0,197,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2"/>
-		<Label Content="Namespace" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Height="26" Width="73"/>
-		<Label Content=":" Margin="0,217,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
-		<TextBox Grid.Column="1" Height="23" Margin="10,218,10,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
-		<Rectangle HorizontalAlignment="Stretch" Fill="#FFABADB3" Height="1" Grid.ColumnSpan="3" Margin="10,248,10,0" VerticalAlignment="Top"/>
-		<Label Content="Fields" HorizontalAlignment="Left" Margin="10,254,0,0" VerticalAlignment="Top" Height="26" Width="41"/>
-		<Label Content=":" Margin="0,254,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
-		<Button Content="Edit" Grid.Column="2" Margin="10,254,10,0" VerticalAlignment="Top" Height="26"/>
-		<Label Content="Methods" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top" Height="26" Width="58"/>
-		<Label Content=":" Margin="0,285,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
-		<Button Content="Edit" Grid.Column="2" Margin="10,285,10,0" VerticalAlignment="Top" Height="26"/>
-		<Label Content="Op overloadings" HorizontalAlignment="Left" Margin="10,316,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
-		<Label Content=":" Margin="0,316,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
-		<Button Content="Edit" Grid.Column="2" Margin="10,316,10,0" VerticalAlignment="Top" Height="26"/>
-		<CheckBox Content="Is swappable" Grid.Column="1" Margin="0,347,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2"/>
-
-	</Grid>
+        Title="Edit class" Width="450" Height="480" MinWidth="400" MinHeight="405">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Class name" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="26" Width="72"/>
+        <Label Content=":" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
+        <TextBox x:Name="_classname_textbox" Grid.Column="1" Height="23" Margin="10,11,10,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2" TextChanged="onClassnameTextChanged"/>
+        <Label Content="Header file" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="26" Width="70"/>
+        <Label Content=":" Margin="0,41,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
+        <TextBox x:Name="_headerfile_textbox" Grid.Column="1" Height="23" Margin="10,42,10,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <Label Content="Source file" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Height="26" Width="67"/>
+        <Label Content=":" Margin="0,72,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
+        <TextBox x:Name="_sourcefile_textbox" Grid.Column="1" Height="23" Margin="10,73,10,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <Label Content="Template source file" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Height="26" Width="121"/>
+        <Label Content=":" Margin="0,103,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
+        <TextBox x:Name="_templatesource_textbox" Grid.Column="1" Height="23" Margin="10,104,10,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Stretch" Fill="#FFABADB3" Height="1" Grid.ColumnSpan="3" Margin="10,134,10,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="_includeguard_checkbox" Content="With include guard" Grid.Column="1" Margin="10,140,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label Content="Include guard" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Height="26" Width="85"/>
+        <Label Content=":" Margin="0,160,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
+        <TextBox x:Name="_includeguard_textbox" Grid.Column="1" Height="23" Margin="10,161,10,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Stretch" Fill="#FFABADB3" Height="1" Grid.ColumnSpan="3" Margin="10,191,10,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="_namespace_checkbox" Content="With namespace" Grid.Column="1" Margin="10,197,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label Content="Namespace" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Height="26" Width="73"/>
+        <Label Content=":" Margin="0,217,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
+        <TextBox x:Name="_namespace_textbox" Grid.Column="1" Height="23" Margin="10,218,10,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Stretch" Fill="#FFABADB3" Height="1" Grid.ColumnSpan="3" Margin="10,248,10,0" VerticalAlignment="Top"/>
+        <Label Content="Fields" HorizontalAlignment="Left" Margin="10,254,0,0" VerticalAlignment="Top" Height="26" Width="41"/>
+        <Label Content=":" Margin="0,254,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
+        <Button x:Name="_fieldedit_button" Content="Edit" Grid.Column="2" Margin="10,254,10,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Methods" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top" Height="26" Width="58"/>
+        <Label Content=":" Margin="0,285,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
+        <Button x:Name="_methodedit_button" Content="Edit" Grid.Column="2" Margin="10,285,10,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Op overloadings" HorizontalAlignment="Left" Margin="10,316,0,0" VerticalAlignment="Top" Height="26" Width="100"/>
+        <Label Content=":" Margin="0,316,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13" Height="26"/>
+        <Button x:Name="_opoverloadingedit_button" Content="Edit" Grid.Column="2" Margin="10,316,10,0" VerticalAlignment="Top" Height="26"/>
+        <CheckBox x:Name="_isfinal_checkbox" Content="Is final" Grid.Column="1" Margin="10,347,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <CheckBox x:Name="_isvirtual_checkbox" Content="Is virtual" Grid.Column="2" Margin="0,347,10,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <CheckBox x:Name="_isswappable_checkbox" Content="Is swappable" Grid.Column="1" Margin="10,367,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90"/>
+    </Grid>
 </Window>

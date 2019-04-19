@@ -23,5 +23,12 @@ namespace ClassGenerator
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void onClassnameTextChanged(object sender, TextChangedEventArgs e)
+        {
+            this._headerfile_textbox.Text = this._classname_textbox.Text + ".h";
+            this._sourcefile_textbox.Text = this._classname_textbox.Text + ".cpp";
+            this._templatesource_textbox.Text = this._classname_textbox.Text + ".hpp";
+        }
+    }
 }

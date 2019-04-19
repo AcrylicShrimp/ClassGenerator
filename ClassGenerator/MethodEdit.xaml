@@ -6,14 +6,25 @@
         xmlns:local="clr-namespace:ClassGenerator"
         mc:Ignorable="d"
         Title="MethodEdit" Width="450" Height="450" MinWidth="400">
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="170"/>
-			<ColumnDefinition Width="1*"/>
-		</Grid.ColumnDefinitions>
-		<Label Content="Method name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-		<Label Content=":" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top"/>
-		<TextBox Grid.Column="1" Height="23" Margin="10,11,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Method name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="87"/>
+        <Label Content=":" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="26" Width="13"/>
+        <TextBox Grid.Column="1" Height="23" Margin="10,11,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <Label Content="Method type" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="26" Width="81"/>
+        <Label Content=":" HorizontalAlignment="Right" Margin="0,41,10,0" VerticalAlignment="Top" Height="26" Width="13"/>
+        <TextBox Grid.Column="1" Height="23" Margin="10,42,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <CheckBox Content="Is static" Grid.Column="1" Margin="10,70,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72"/>
+        <CheckBox Content="Is const" Grid.Column="1" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Is virtual" Grid.Column="2" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Is pure virtual" Grid.Column="2" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Is override" Grid.Column="2" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Is noexcept" Grid.Column="1" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Is inline" Grid.Column="1" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
 
-	</Grid>
+    </Grid>
 </Window>
